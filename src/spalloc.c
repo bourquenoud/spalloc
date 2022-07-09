@@ -41,7 +41,7 @@ void __sp_cleanup_debug(void *ptr_to_sp)
 
     if (cleanup_sptr.refcount == NULL)
     {
-        fprintf(stderr, "WARNING : Automatic cleanup detected a deleted smart pointer."
+        fprintf(stderr, "WARNING : Deleted smart pointer detected during automatic cleanup."
                         " Make sure no <sp_auto_t> pointers are manually deleted.\n");
         return;
     }
