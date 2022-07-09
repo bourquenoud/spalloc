@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: spalloc
+Description: A smart pointer library for C with pseudo-templates and automatic memory management
+Version: 0.1.0
+Cflags: -I${includedir}/spalloc
+Libs: -l:libspalloc.a -L${libdir}
