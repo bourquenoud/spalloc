@@ -32,6 +32,7 @@
 // Enable auto smart pointer only if the compiler can use the cleanup attribute
 #if defined __has_attribute
 #if __has_attribute(cleanup) && !defined(SPALLOC_NO_AUTO_CLEANUP)
+#define SPALLOC_HAS_AUTO
 #ifdef SPALLOC_DEBUG
 // Cleanup logs messages
 #define sp_auto_t(type) sp_##type##_t __attribute__((cleanup(__sp_cleanup_debug)))
