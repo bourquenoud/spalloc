@@ -48,14 +48,14 @@
     {                                        \
         type *ptr;                           \
         _Atomic volatile uint32_t *refcount; \
-    } sp_##type##_t;
+    } sp_##type##_t
 #else
 #define SP_DEF(type)        \
     typedef struct          \
     {                       \
         type *ptr;          \
         uint32_t *refcount; \
-    } sp_##type##_t;
+    } sp_##type##_t
 #endif
 
 // Decrement the reference count and free the memory if the number of
@@ -153,7 +153,6 @@ SP_DEF(double);
 typedef char *char_ptr;
 SP_DEF(char_ptr);
 
-// Cleanup function for auto smart pointers
 void __sp_cleanup(void *);
 void __sp_cleanup_debug(void *ptr_to_sp);
 
