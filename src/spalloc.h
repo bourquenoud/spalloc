@@ -19,6 +19,7 @@
 
 #include <stddef.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 #ifdef SPALLOC_DEBUG
 #include <stdio.h>
@@ -141,6 +142,7 @@
 // for C23)
 SP_DEF(char);
 SP_DEF(void);
+SP_DEF(bool);
 SP_DEF(uint8_t);
 SP_DEF(int8_t);
 SP_DEF(uint16_t);
