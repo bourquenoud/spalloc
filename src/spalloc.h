@@ -96,12 +96,12 @@
 
 // Return the a copy of the smart pointer and delete the original smart
 // pointer
-#define spmove(src) ({                                                \
-    _spalloc_print_log("Line %i: Moving smart pointer %p,\n" __LINE__,\
-                       (sp).ptr);                                     \
-    typeof(src) new_ptr = (src);                                      \
-    (src) = typeof(src){NULL, NULL};                                  \
-    new_ptr;                                                          \
+#define spmove(src) ({                                                 \
+    _spalloc_print_log("Line %i: Moving smart pointer %p,\n" __LINE__, \
+                       (sp).ptr);                                      \
+    typeof(src) new_ptr = (src);                                       \
+    (src) = typeof(src){NULL, NULL};                                   \
+    new_ptr;                                                           \
 })
 
 // Return the value pointed by the smart pointer and delete the smart pointer
@@ -128,7 +128,7 @@
 #define spresize(sp, count) ({                                  \
     _spalloc_print_log("%s",                                    \
     (*(sp).refcount) > 1 ?                                      \
-        "WARNING : resizing a smart pointer with more than"     \
+        "ERROR : resizing a smart pointer with more than"     \
         " one reference, this can lead to data corruption.\n"   \
         : "");                                                  \
     (sp).ptr = realloc((sp).ptr, count * sizeof(typeof(src)));  \
