@@ -85,7 +85,7 @@ Defining `SPALLOC_DEBUG` before including `spalloc.h` will enable log messages t
 Only types that are a single word can be used because of the way macro handles parameters. A simple workaround is to use a typedef. Example:
 
 ```c
-typedef int* int_ptr;
+typedef int *int_ptr;
 SP_DEF(int_ptr);
 sp_t(int_ptr) smart_pointer_of_pointer_of_int;
 ```
